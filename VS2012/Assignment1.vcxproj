@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{277EAE68-9EED-4EFF-BAD3-2A70787A3E8D}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Assignment1</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)/../Bin/</OutDir>
+    <IntDir>$(SolutionDir)/../Build/$(Configuration)/</IntDir>
+    <TargetName>$(ProjectName)-$(Configuration)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)/../Bin/</OutDir>
+    <IntDir>$(SolutionDir)/../Build/$(Configuration)/</IntDir>
+    <TargetName>$(ProjectName)-$(Configuration)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../ThirdParty/glew-1.10.0/include;../ThirdParty/glfw-3.0.4/include;../ThirdParty/glm;../ThirdParty/AssImp/Include;../ThirdParty/FreeImage/Include;../ThirdParty/DevIL/DevILx86-1.7.8/include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../ThirdParty/glew-1.10.0/lib/Release/Win32;../ThirdParty/glfw-3.0.4/lib/Win32/lib-msvc110;../ThirdParty/AssImp/Lib;../ThirdParty/FreeImage/Lib;../ThirdParty/DevIL/DevILx86-1.7.8/lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp.lib;FreeImage.lib;DevIL.lib;ILU.lib;ILUT.lib;opengl32.lib;glew32s.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../ThirdParty/glew-1.10.0/include;../ThirdParty/glfw-3.0.4/include;../ThirdParty/glm</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../ThirdParty/glew-1.10.0/lib/Release/Win32;../ThirdParty/glfw-3.0.4/lib/Win32/lib-msvc110</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glew32s.lib;glfw3.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <BuildLog>
+      <Path>
+      </Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\Scenes\AlienTest.scene" />
+    <None Include="..\Scenes\BSplineTest.scene" />
+    <None Include="..\Scenes\CoordinateSystem.scene" />
+    <None Include="..\Scenes\RayCastTest.scene" />
+    <None Include="..\Scenes\Sun.scene" />
+    <None Include="..\Scenes\StateMachineTest.scene" />
+    <None Include="..\Scenes\TankVehicle.scene" />
+    <None Include="..\Scenes\VehicleTest.scene" />
+    <None Include="..\Source\Shaders\BlueColor.fragmentshader" />
+    <None Include="..\Source\Shaders\Gouraud.fragmentshader" />
+    <None Include="..\Source\Shaders\Gouraud.vertexshader" />
+    <None Include="..\Source\Shaders\Phong.fragmentshader" />
+    <None Include="..\Source\Shaders\Phong.vertexshader" />
+    <None Include="..\Source\Shaders\SimpleTransform.vertexshader" />
+    <None Include="..\Source\Shaders\SingleColor.fragmentshader" />
+    <None Include="..\Source\Shaders\SolidColor.vertexshader" />
+    <None Include="..\Source\Shaders\SolidColor.fragmentshader" />
+    <None Include="..\Source\Shaders\Texture.fragmentshader" />
+    <None Include="..\Source\Shaders\Texture.vertexshader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Source\AlienCubeModel.cpp" />
+    <ClCompile Include="..\Source\BoundingBox.cpp" />
+    <ClCompile Include="..\Source\AlienModel.cpp" />
+    <ClCompile Include="..\Source\BSpline.cpp" />
+    <ClCompile Include="..\Source\BulletModel.cpp" />
+    <ClCompile Include="..\Source\Camera.cpp" />
+    <ClCompile Include="..\Source\CubeModel.cpp" />
+    <ClCompile Include="..\Source\CubeParticle.cpp" />
+    <ClCompile Include="..\Source\CubeIdleState.cpp" />
+    <ClCompile Include="..\Source\CubeModelSM.cpp" />
+    <ClCompile Include="..\Source\CubeMovingState.cpp" />
+    <ClCompile Include="..\Source\CubeSMController.cpp" />
+    <ClCompile Include="..\Source\FirstPersonCamera.cpp" />
+    <ClCompile Include="..\Source\FreeLookCamera.cpp" />
+    <ClCompile Include="..\Source\LightModel.cpp" />
+    <ClCompile Include="..\Source\objloader.cpp" />
+    <ClCompile Include="..\Source\mesh.cpp" />
+    <ClCompile Include="..\Source\Missile.cpp" />
+    <ClCompile Include="..\Source\Particle.cpp" />
+    <ClCompile Include="..\Source\ParticleEmitter.cpp" />
+    <ClCompile Include="..\Source\RayCast.cpp" />
+    <ClCompile Include="..\Source\sceneLoader.cpp" />
+    <ClCompile Include="..\Source\MoonModel.cpp" />
+    <ClCompile Include="..\Source\SMController.cpp" />
+    <ClCompile Include="..\Source\SphereModel.cpp" />
+    <ClCompile Include="..\Source\State.cpp" />
+    <ClCompile Include="..\Source\StaticCamera.cpp" />
+    <ClCompile Include="..\Source\EventManager.cpp" />
+    <ClCompile Include="..\Source\main.cpp" />
+    <ClCompile Include="..\Source\Model.cpp" />
+    <ClCompile Include="..\Source\TankModel.cpp" />
+    <ClCompile Include="..\Source\TexturedCube.cpp" />
+    <ClCompile Include="..\Source\ThirdPersonCamera.cpp" />
+    <ClCompile Include="..\Source\TriangleModel.cpp" />
+    <ClCompile Include="..\Source\SunModel.cpp" />
+    <ClCompile Include="..\Source\VehicleModel.cpp" />
+    <ClCompile Include="..\Source\Renderer.cpp" />
+    <ClCompile Include="..\Source\World.cpp" />
+    <ClCompile Include="SkyBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Source\AlienCubeModel.h" />
+    <ClInclude Include="..\Source\BoundingBox.h" />
+    <ClInclude Include="..\Source\AlienModel.h" />
+    <ClInclude Include="..\Source\BSpline.h" />
+    <ClInclude Include="..\Source\BulletModel.h" />
+    <ClInclude Include="..\Source\Camera.h" />
+    <ClInclude Include="..\Source\CubeModel.h" />
+    <ClInclude Include="..\Source\CubeParticle.h" />
+    <ClInclude Include="..\Source\CubeIdleState.h" />
+    <ClInclude Include="..\Source\CubeModelSM.h" />
+    <ClInclude Include="..\Source\CubeMovingState.h" />
+    <ClInclude Include="..\Source\CubeSMController.h" />
+    <ClInclude Include="..\Source\FirstPersonCamera.h" />
+    <ClInclude Include="..\Source\FreeLookCamera.h" />
+    <ClInclude Include="..\Source\LightModel.h" />
+    <ClInclude Include="..\Source\objloader.hpp" />
+    <ClInclude Include="..\Source\mesh.h" />
+    <ClInclude Include="..\Source\meshData.h" />
+    <ClInclude Include="..\Source\MoonModel.h" />
+    <ClInclude Include="..\Source\Missile.h" />
+    <ClInclude Include="..\Source\ParsingHelper.h" />
+    <ClInclude Include="..\Source\Particle.h" />
+    <ClInclude Include="..\Source\ParticleEmitter.h" />
+    <ClInclude Include="..\Source\RayCast.h" />
+    <ClInclude Include="..\Source\sceneLoader.h" />
+    <ClInclude Include="..\Source\SMController.h" />
+    <ClInclude Include="..\Source\SphereModel.h" />
+    <ClInclude Include="..\Source\State.h" />
+    <ClInclude Include="..\Source\StaticCamera.h" />
+    <ClInclude Include="..\Source\EventManager.h" />
+    <ClInclude Include="..\Source\Model.h" />
+    <ClInclude Include="..\Source\texture.hpp" />
+    <ClInclude Include="..\Source\TankModel.h" />
+    <ClInclude Include="..\Source\TexturedCube.h" />
+    <ClInclude Include="..\Source\ThirdPersonCamera.h" />
+    <ClInclude Include="..\Source\TriangleModel.h" />
+    <ClInclude Include="..\Source\SunModel.h" />
+    <ClInclude Include="..\Source\VehicleModel.h" />
+    <ClInclude Include="..\Source\Renderer.h" />
+    <ClInclude Include="..\Source\World.h" />
+    <ClInclude Include="SkyBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\..\Pictures\Skybox\alien_skybox.jpg" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
